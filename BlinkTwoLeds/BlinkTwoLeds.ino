@@ -11,14 +11,17 @@ long previousMillisRed = 0;    //last time Red LED was updated
 long previousMillisGreen = 0;  //last time Green LED was updated
 
 // must be long to prevent overflow
-long greenLedInterval = 900; //interval to blink greed LED (milliseconds)
-long redLedInterval = 200;    //interval to blink greed LED (milliseconds)
+long greenLedInterval = 1100; //interval to blink greed LED (milliseconds)
+long redLedInterval = 1110;    //interval to blink red LED (milliseconds)
 unsigned long currentMillis = 0;
 
 void setup() {
   // set the pins to output mode
   pinMode(greenLedPin, OUTPUT);
   pinMode(redLedPin, OUTPUT);
+  digitalWrite(redLedPin, redLedState);
+  digitalWrite(greenLedPin, greenLedState);
+  
   currentMillis = millis();
 }
 
